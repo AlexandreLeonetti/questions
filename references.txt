@@ -1,0 +1,22 @@
+hard questions
+https://intspirit.medium.com/the-most-failed-javascript-interview-questions-849664e5bee
+
+modules hard questions
+https://javascript.plainenglish.io/50-shades-of-es6-modules-95cd0b016156
+
+proto
+https://www.youtube.com/watch?v=mQ4oCgcgHOA
+
+docu
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+best git repos
+https://www.youtube.com/watch?v=oiyhpZupQnI
+
+http://callbackhell.com/
+
+
+https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch2.md
+
+https://github.com/KBPsystem777/You-Dont-Know-JS/tree/master/async%26performance
+https://github.com/KBPsystem777/You-Dont-Know-JS/tree/master/async%26performance
