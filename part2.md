@@ -5,7 +5,7 @@
 
 ```
 
-> question 1, tell if the following code is working (again) : 
+ question 1, tell if the following code is working (again) : 
 
 ```js
 /* test */
@@ -24,13 +24,16 @@ main ( )
 ```
 
 
-> Où les logs d'une application doivent-ils être stockés selon la méthodologie Twelve-Factor App ?
+Question 2 [ 12 factor App ] 
+Où les logs d'une application doivent-ils être stockés selon la méthodologie Twelve-Factor App ?
 
 Selon la méthodologie Twelve-Factor App, les logs d'une application doivent être traités comme des flux de données événementiels et écrits sur la sortie standard (STDOUT). Ils ne doivent pas être écrits directement dans des fichiers de log, mais plutôt dirigés vers un service de journalisation externe ou un système de gestion des logs. Cela permet une gestion centralisée des logs et facilite le suivi des événements d'une application distribuée.
 
 
 
-> Write a mocha should test for this 
+Question 3 [ Mocha test ] 
+
+Write a mocha should test for this 
 
 Considérons la fonction suivante :
 
@@ -66,21 +69,33 @@ describe('isThisNumberAGood', function() {
 ```
 
 
-> question : Dans cet exercice, vous allez travailler avec le module vm pour créer une fonction qui renvoie toutes les chaînes de caractères qui ont été loguées pendant l'exécution d'un script.
+Question 4 [ VM intercept logs ]: 
+Dans cet exercice, vous allez travailler avec le module vm pour créer une fonction qui renvoie 
+toutes les chaînes de caractères qui ont été loguées pendant l'exécution d'un script.
+
 Implémentez la fonction interceptLogCalls (scriptContent, timeout) ou :
+
 scriptcontent est une chaine de caractères représentant un script JavaScript.
-﻿﻿timeout est un nombre entier représentant le temps d'exécution du script.
-﻿﻿la sortie de la fonction est un objet Promise qui retourne la liste des chaînes de caractères loguées durant l'exécution du script.
+timeout est un nombre entier représentant le temps d'exécution du script.
+
+la sortie de la fonction est un objet Promise qui retourne la liste des chaînes de caractères loguées durant l'exécution du script.
+
 Remarque :
-﻿﻿Vous devez ignorer toutes les chaînes de caractères qui ont été enregistrées après le timeout.
-﻿﻿Si plusieurs arguments ont été passés a console. log, vous devez les joindre
-avec un espace.
+
+Vous devez ignorer toutes les chaînes de caractères qui ont été enregistrées après le timeout.
+Si plusieurs arguments ont été passés a console. log, vous devez les joindre avec un espace.
+
 Exemple :
+```js 
 const result = await interceptLogCalls(
 const a = 'hello' ;
-console. log(a, 'world')
+console.log(a, 'world')
+,
 2000
-console. log (result) // ['hello world']
+);
+console.log (result) // ['hello world']
+
+```
 
 ```js
 const vm = require('vm');
@@ -127,15 +142,15 @@ interceptLogCalls(scriptContent, timeout)
 ```
 
 
-> Nouvelle question
+> Question 5 [ regexp and streams ]
 
 Implémentez la fonction suivantes :
 filterstream(inputStream, regexp) avec les exigences
 inputStream est un stream accessible en lecture qui émet des lignes de données (sous forme de chaines UTF-8)
 regexp est un objet RegExp qui est utilisé pour filtrer les données
 inputstream:
-﻿﻿Votre fonction doit retourner un stream.
-﻿﻿La lecture de ce stream doit renvoyer uniquement les éléments correspondants à l'expression régulière.
+Votre fonction doit retourner un stream.
+La lecture de ce stream doit renvoyer uniquement les éléments correspondants à l'expression régulière.
 
 Exemple :
 
@@ -250,13 +265,16 @@ function filterStream(inputStream, regexp) {
 ```
 
 
-> Dans cet exercice, vous allez créer une fonction simple qui modélise un client HTTP, prenant une URL en entrée et renvoyant la réponse GET parsée du serveur local.
+Question 6 [ server http https ]
+
+Dans cet exercice, vous allez créer une fonction simple qui modélise un client HTTP, prenant une URL en entrée et renvoyant la réponse GET parsée du serveur local.
 Implémentez la fonction asynchrone getisoN où :
-﻿﻿urt est une chaîne de caractère représentant 'URL absolue de la page à consulter.
-﻿﻿La sortie de la fonction est une promesse contenant la réponse GET parsée sous la forme d'un object JavaScript.
-﻿﻿Votre fonction doit prendre en charge les deux schémas de protocole http et https.
+
+url est une chaîne de caractère représentant 'URL absolue de la page à consulter.
+La sortie de la fonction est une promesse contenant la réponse GET parsée sous la forme d'un object JavaScript.
+Votre fonction doit prendre en charge les deux schémas de protocole http et https.
 Pour l'exemple fourni dans le code de test, votre fonction doit retourner :
-(hellon
+hello
 "world' now: XXX
 // XXX being the time of execution
 
