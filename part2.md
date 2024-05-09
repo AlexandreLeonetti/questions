@@ -263,6 +263,41 @@ function filterStream(inputStream, regexp) {
 	return filteredStream;
 }
 ```
+Actual answer :
+```js
+import { Readable } from "stream";
+
+
+const inputStream = Readable.from(["aaa", "aAa","ccc", "dd","123", "aab","AAA"]);
+const regexp = /aaa/i;
+
+
+
+function filterStream(inputStream, regexp){
+    const filteredStream = new Readable({
+        read(){},
+    });
+
+    inputStream.on("data", (line) => {
+        if(regexp.test(line)){
+            filteredStream.push(`${line}\n`);
+        }
+    });
+    inputStream.on('end', () => {
+        console.log('Stream ended');
+    });
+    return filteredStream;
+}
+
+
+
+const outputStream = filterStream(inputStream, regexp);
+
+outputStream.on("data", (chunk) => {
+    console.log(chunk.toString());
+});
+
+```
 
 Question 6 [ server http https ]
 
